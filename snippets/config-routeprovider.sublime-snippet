@@ -1,0 +1,18 @@
+<snippet>
+  <content><![CDATA[
+config(['\$routeProvider',
+  function (\$routeProvider) {
+    \$routeProvider
+      .when( '/${1:route}', {
+        templateUrl:  '${1}.html',
+        controller:   '${1/([A-Za-z0-9]+)?/(?2::\u$1)/g}Ctrl' })
+      .when( '/${3:route}', {
+        templateUrl:  '${3}.html',
+        controller:   '${3/([A-Za-z0-9]+)?/(?2::\u$1)/g}Ctrl' })
+      .otherwise({ redirectTo: '/${4:login}' });
+}])
+]]></content>
+  <tabTrigger>config</tabTrigger>
+  <scope>source.js</scope>
+  <description>Angular.js (with routeProvider)</description>
+</snippet>
